@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    
+</head>
+
+<body >
+   
+    {% extends "Registro/padre.html" %} {% load static %}
+    {% block contenidoQueCambia %}
+   
+       
+    <div class="formulario">
+        <form action="/Registro/cliente-formulario/" method="POST">
+        {% csrf_token %}
+        <p>Cliente <input type="text" id="nombre" name="nombre"></p>
+        <p>Telefono <input type="number" name="telefono"></p>
+        <p>Email <input type="text" name="email"></p>
+        <input type="submit" value="Enviar">
+        </form>
+    </div>
+  
+    {% endblock %} 
+</body>
+
+</html>
